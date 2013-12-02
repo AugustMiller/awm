@@ -1,0 +1,37 @@
+
+//	
+//	User Input
+//	
+
+
+form {
+	display: table;
+	width: 100%;
+
+	.form-row {
+		display: table-row;
+		.form-element {
+			display: table-cell;
+		}
+	}
+}
+
+input , textarea {
+	background: white;
+	margin: 0 0 1em 0;
+	padding: 1em 1.5em;
+	width: auto;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	@include border-radius( 3px );
+
+	&.text {
+
+	}
+}
+
+label {
+	padding: 1em 1.5em 1em 0;
+	display: table-cell;
+}

@@ -1,0 +1,146 @@
+
+//	
+//	Structure
+//	
+
+
+//	Big Picture
+
+* {
+	outline: none;
+	// No longer necessary, because we account for this in the column generator.
+	// @include box-sizing(border-box);
+	// -ms-box-sizing: border-box;
+//	-webkit-font-smoothing: antialiased;
+}
+
+html , body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	@media screen and ( max-width: $tabletBreakpoint ) {
+		-webkit-text-size-adjust: 140%;
+	}
+}
+
+body {
+	background: white;
+	margin: 0;
+}
+
+header.page-header {
+	padding: 1em 0;
+}
+
+#main {
+	// border-top: 1px solid white;
+	clear: both;
+}
+
+
+//	
+//	Column Factory!
+//	
+
+@for $column from 1 through $numColumns {
+	.col-#{$column} {
+		width: ( ( ( 100% ) / $numColumns ) * $column );
+	}
+
+	.push-#{$column} {
+		margin-left: ( ( 100% ) / $numColumns ) * $column ;
+	}
+}
+
+.column {
+	// background: rgb(200,200,200);
+	padding-right: ( $gutterWidth / 2 );
+	min-height: 1em;
+	float: left;
+	@include box-sizing( border-box );
+	@media screen and ( max-width: $mobileBreakpoint ) {
+		clear: both;
+		width: auto;
+		float: none;
+		text-align: left;
+		padding: 0;
+	}
+}
+
+.structure .column {
+	@include animate();
+	background: rgba(0,0,0,.1);
+}
+
+.column .column {
+	padding: 0;
+}
+
+@media screen and ( max-width : $tabletBreakpoint ) and ( min-width : $mobileBreakpoint ) {
+	.tablet-full {
+		width: 100%;
+	}
+
+	.tablet-half {
+		width: ( 100% / 2 );
+	}
+
+	.tablet-quarter {
+		width: ( 100% / 4 );
+	}
+
+	.tablet-third {
+		width: ( 100% / 3 );
+	}
+
+	.tablet-two-thirds {
+		width: ( ( 100% / 3 ) * 2 );
+	}
+
+	.tablet-hide {
+		display: none;
+	}
+
+	.tablet-show {
+		display: auto;
+	}
+}
+
+@media screen and ( max-width : $mobileBreakpoint ) {
+	.mobile-full {
+		width: 100%;
+	}
+
+	.mobile-half {
+		width: ( 100% / 2 );
+	}
+
+	.mobile-quarter {
+		width: ( 100% / 4 );
+	}
+
+	.mobile-hide {
+		display: none;
+	}
+
+	.mobilde-show {
+		display: auto;
+	}
+}
+
+.section {
+	margin-bottom: 5em;
+
+	@media screen and ( max-width : 480px ) {
+		margin-bottom: 2em;
+	}
+}
+
+//	Displaying Overrides
+
+img {
+	display: block;
+	background: transparent url('../images/loading.png');
+}

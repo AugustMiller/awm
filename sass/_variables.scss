@@ -1,0 +1,69 @@
+
+//	
+//	Configurables, for inclusion in the master SCSS file.
+//	
+
+
+//	The base color of our page.
+$bodyBackground:	#FDFDFD;	//	
+$textBaseColor:		#111111;	//	Lightness calcs done from this.
+$separatorColor:	#C8C8C8;	//	Borders, site-wide.
+$separatorColorDark:	adjust-lightness( $separatorColor , -25% );	//	Above, dark.
+$highlightColor:	rgb(150, 150, 150);
+$selectColor:		rgba(150, 150, 150, .6);
+//$selectColor:		rgb(174, 202, 214);
+
+//	Margins
+$standardPageWidth:	75%;
+$minPageWidth:		30em;
+$maxPageWidth:		65em;
+$standardMargin:	10%;
+$wideMargin:		15%;
+$narrowMargin:		1.5em;	//	Fixed is nice around a smaller window.
+
+//	Columns
+$numColumns: 12;
+$gutterWidth: 3%;
+
+//	Header Color
+$headerBackground: transparent;
+
+//	Links
+$linkColor: rgb(100,100,100);
+$linkColorHover: $highlightColor;
+$headerLinkColor: rgb(100,100,100);
+// $headerLinkColorHover: #202930;
+$headerLinkColorHover: black;
+
+//	Type Scales
+$baseType: 14px;
+$leading: 1.5em;
+$capitalTracking: 0.08em;
+
+//	Fonts
+$sansFamily: #{"Helvetica Neue" , Helvetica , Arial, sans-serif};
+
+//	Quotes
+$quoteColor: #777;
+
+//	Breakpoints
+$mobileBreakpoint: 640px;
+$tabletBreakpoint: 960px;
+$desktopBreakpoint: 1024px;
+$wideBreakpoint: 1350px;
+$gutterWidthDesktop: 2%;
+$gutterWidthWide: 2%;
+
+@import "compass/css3/transition";
+
+@mixin animate( $duration: .3s , $property: all , $function: cubic-bezier( 0 , 1 , 1 , 1 ) ) {
+		@include transition-duration( $duration );
+		@include transition-property( $property );
+		@include transition-timing-function( $function );
+}
+
+@mixin after() {
+	display: block;
+	content: '';
+	@content;
+}

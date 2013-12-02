@@ -1,0 +1,133 @@
+
+//	
+//	Typography
+//	
+
+
+//	Some defaults
+
+body {
+	line-height: $leading;
+	font-size: $baseType;
+	font-family: $sansFamily;
+	font-weight: 300;
+	font-style: normal;
+	color: $textBaseColor;
+	@media screen and ( max-width : $tabletBreakpoint ) {
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
+
+::-moz-selection {
+	// color: red;
+	background: $selectColor;
+	color: white;
+}
+
+::selection {
+	background: $selectColor;
+	color: white;
+}
+
+//	Headings & Hierarchy
+
+h1 , h2 , h3 , h4 , h5 , h6 {
+	font: inherit;
+	font-weight: bold;
+}
+
+h1 {
+	
+}
+
+h2 {
+
+}
+
+h3 {
+	
+}
+
+h4 , h5 , h6 {
+
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+em {
+	font-style: italic;
+}
+
+pre {
+	font-family: monospace;
+}
+
+//	Links
+
+a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 1px solid $linkColorHover;
+	@include animate( .2s , all , ease-out );
+
+	&:hover {
+		border-bottom: 1px solid black;
+	}
+
+	&.no-border {
+		border: none !important;
+	}
+}
+
+//	Lists
+
+ul {
+	
+}
+
+
+ol , ul {
+
+	li {
+
+	}
+}
+
+ul {
+
+	margin: 1em 0;
+
+	li {
+		padding-left: 1.5em;
+		&:before {
+			display: inline-block;
+			content: '+';
+			width: .95em;
+			margin-left: -1.15em;
+			color: $highlightColor;
+		}
+	}
+}
+
+ol {
+	list-style-type: decimal;
+
+	li {
+
+	}
+}
+
+//	Paragraphs
+
+p + p {
+	margin: .75em 0 0 0;
+}
+
+//	Clippings
+
+
+//	Feeds

@@ -1,0 +1,26 @@
+
+//	
+//	Navigation
+//	
+
+header#navigation {
+	position: fixed;
+	top: 3em;
+	right: 3em;
+	z-index: 2000;
+	img {
+		width: 3em;
+		background: none;
+		cursor: pointer;
+		opacity: 0.85;
+
+		@media screen and ( max-width : $mobileBreakpoint ) {
+			width: 2em;
+		}
+	}
+
+	@media screen and ( max-width : $mobileBreakpoint ) {
+		top: 1.5em;
+		right: 1em;
+	}
+}

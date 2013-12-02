@@ -1,0 +1,158 @@
+
+//	
+//	Work Matrix
+//	
+
+.instructions {
+	position: fixed;
+	bottom: 3em;
+	right: 3em;
+	opacity: .5;
+	z-index: 1500;
+	.keys {
+		background: transparent url('../images/keys.svg') center center no-repeat;
+		width: 34px;
+		height: 22px;
+		margin-left: -35px;
+	}
+}
+
+.minimap {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 2000;
+	font-size: 2px;
+	color: rgba(0,0,0,0.25);
+	line-height: 100%;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	@include animate();
+
+	.map-row {
+		cursor: pointer;
+		.map-slide {
+			float: left;
+			width: 6px;
+			height: 6px;
+			background: rgba(255,255,255,0.3);
+			@include animate();
+			&:hover {
+				background: rgba(255,255,255,0.5);
+			}
+		}
+		.proj-name {
+			float: left;
+			margin: 2px;
+		}
+		&.active {
+			.map-slide.visible {
+				background: rgba(255,255,255,0.75);
+			}
+		}
+	}
+	&:hover {
+		font-size: 10px;
+		color: rgba(0,0,0,0.5);
+		.map-row {
+			margin-bottom: 2px;
+			.map-slide {
+				@include box-shadow( 0 1px 5px rgba(100,100,100,0.15));
+				margin-right: 2px;
+				width: 15px;
+				height: 15px;
+			}
+			.proj-name {
+				margin: 2px 0 0 9px;
+			}
+		}
+	}
+}
+
+.loaded {
+	.gallery-slides {
+		position: fixed;
+	}
+}
+.gallery-slides {
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(210,210,210);
+	z-index: 1000;
+
+	.gallery-wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.project {
+		position: relative;
+		overflow: hidden;
+		.slide {
+			float: left;
+			overflow: hidden;
+
+			&.text {
+				overflow: auto;
+				@media screen and ( max-width : $tabletBreakpoint ) {
+					.description , .bio {
+						display: none;
+					}
+				}
+			}
+
+			.slide-padding {
+				padding: 3em;
+				.section {
+					clear: both;
+				}
+				@media screen and ( max-width : 480px ) {
+					padding: 2em 3em 0 1.5em;
+				}
+			}
+
+			h1 {
+
+			}
+
+			&.intro {
+				background: white;
+				overflow: scroll;
+			}
+
+			.image {
+				img {
+					width: 100%;
+				}
+			}
+			.caption {
+
+			}
+
+			&.arrow-down , &.arrow-right {
+				background-size: 4em;
+				background-color: transparent;
+				background-repeat: no-repeat;
+			}
+
+			&.arrow-down {
+				background-image: inline-image('../images/swipe_down.svg');
+				background-position: center bottom;
+			}
+			
+			&.arrow-right {
+				background-image: inline-image('../images/swipe_right.svg');
+				background-position: right center;
+			}
+
+			@media screen and ( max-width : $mobileBreakpoint ) {
+				&.arrow-down , &.arrow-right {
+					background-size: 3em;
+				}
+			}
+		}
+	}
+}

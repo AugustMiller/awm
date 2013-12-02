@@ -1,0 +1,53 @@
+
+//	
+//	Included to Override Twitter's default styling
+//	
+
+#twtr-widget-1 {
+	font-size: 80%;
+	* {
+		background: transparent !important;
+	}
+	.twtr-doc {
+		.twtr-hd {
+			display: none;
+
+		}
+
+		.twtr-bd {
+			.twtr-timeline {
+				.twtr-tweets {
+					.twtr-tweet {
+						.twtr-tweet-wrap {
+							padding: 0 0 1em 0;
+							.twtr-tweet-text {
+								a {
+									// color: adjust-lightness( $quoteColor , 15% );
+								}
+								em {
+									display: block;
+									clear: both;
+									font-family: $sansFamily;
+									text-transform: uppercase;
+									font-size: 80%;
+									color: $quoteColor;
+									a {
+										border-bottom: none;
+										margin-right: .15em;
+										margin-left: .15em;
+									}
+								}
+								.twtr-user {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.twtr-ft {
+			display: none;
+		}
+	}
+}

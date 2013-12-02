@@ -1,0 +1,242 @@
+
+//	
+//	Clippings
+//	
+
+
+.post {
+	border-top: 1px solid $separatorColor;
+	padding: 1.5em 0;
+	position: relative; // Anchor captions!
+
+	&:first-of-type {
+		
+	}
+
+	&:last-of-type {
+		// border-bottom: 1px solid #C8C8C8;
+	}
+
+	&:hover .date {
+		color: #AAA;
+	}
+
+	//	Some global stuff.
+
+	h2.post-title {
+		font-family: $sansFamily;
+		font-size: 125%;
+		margin-bottom: 1em;
+		@media screen and ( max-width: $mobileBreakpoint ) {
+			float: left;
+			clear: none;
+		}
+		a {
+			color: inherit;
+		}
+	}
+
+	h6 {
+		float: left;
+		position: absolute;
+		width: 15%;
+		right: 100%;
+		padding: .5em 0;
+		text-align: right;
+		border-top: 1px solid $separatorColor;
+		margin: 0 3%;
+		font-size: 80%;
+	}
+
+	.date {
+		font-family: $sansFamily;
+		font-size: 80%;
+		letter-spacing: $capitalTracking;
+		// text-transform: uppercase;
+		// text-align: center;
+		color: #CCC;
+		cursor: default;
+		line-height: 1.8em;
+		letter-spacing: $capitalTracking;
+
+		@media screen and ( max-width: $mobileBreakpoint ) {
+			float: right;
+			text-align: right;
+		}
+
+		& > span {
+			display: block;
+		}
+
+		span.time {
+			// font-size: 90%;
+		}
+
+		span.day {
+			font-size: 180%;
+		}
+
+		span.month {
+			font-size: inherit;
+		}
+
+		span.year {
+			font-size: 80%;
+			line-height: 1.2em;
+		}
+
+	}
+
+	.post-content {
+		@media screen and ( max-width: $mobileBreakpoint ) {
+			clear: none;
+			margin-top: .5em;
+		}
+	}
+
+	.meta {
+		font-family: $sansFamily;
+	}
+
+	.related {
+		font-family: $sansFamily;
+		font-size: 70%;
+		text-transform: uppercase;
+		text-align: right;
+		line-height: 1.8em;
+		a {
+			display: inline-block;
+			margin: 0 0.15em;
+		}
+	}
+
+	//	Quote-Specific
+
+	&.quote-post {
+		p {
+			font-size: 165%;
+			font-style: italic;
+			line-height: 1.15em;
+			text-indent: -0.5em;
+			color: $quoteColor;
+			&:before {
+				content: '\201C';
+				display: inline;
+				color: scale-lightness($quoteColor, 15%);
+				padding-right: 0;
+			}
+
+			&:after {
+				content: '\201D';
+				display: inline;
+				color: scale-lightness($quoteColor, 15%);
+			}
+		}
+
+		.attribution {
+			font-size: 80%;
+			font-family: $sansFamily;
+			font-style: italic;
+			float: right;
+			margin: .5em;
+		}
+	}
+
+	//	Image Post
+
+	&.image-post {
+
+		// padding-bottom: 0;
+
+		.post-content {
+			
+		}
+
+		a.no-border {
+			display: block;
+		}
+
+		.image-caption p {
+			font-size: 70%;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 1em;
+		}
+	}
+
+	//	Default Styling
+
+	&.default-post {
+
+		img {
+			display: block;
+			width: 100%;
+			margin: 1.5em 0;
+		}
+
+		p {
+			width: 75%;
+			max-width: 31em;
+			clear: both;
+			&:last-of-type {
+				// margin-bottom: 1.5em;
+			}
+		}
+
+		.related {
+			text-align: left;
+			margin-top: 1.5em;
+		}
+
+		iframe {
+			width: 100%;
+			max-height: 25em !important;
+		}
+	}
+}
+
+//	
+//	A post on it's own can be styled differently!
+//	
+
+.single {
+
+	.post-header {
+		@media screen and ( min-width: $mobileBreakpoint ) {
+			
+		}
+	}
+
+	.image-post {
+		.date {
+			display: none;
+		}
+		.post-content {
+			width: auto;
+			float: none;
+			margin: 0 auto;
+		}
+		.image-caption {
+			margin-left: 0;
+		}
+		.related {
+			float: right;
+		}
+	}
+
+	.default-post {
+
+	}
+
+	.quote-post {
+
+	}
+}
+
+
+
