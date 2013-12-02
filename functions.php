@@ -14,15 +14,6 @@ function get_projects ( ) {
 
 		// clog("Using WP_Query");
 
-		$params = array(
-			"projects" => array(
-				"post_parent" => 9,
-				"post_type" => 'page',
-				"posts_per_page" => -1,
-				"post_status" => 'publish'
-			)
-		);
-
 		// $projects = new WP_Query( $params["projects"] );
 		$choices = get_field('projects');
 		$projects = array();
