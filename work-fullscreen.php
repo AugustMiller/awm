@@ -8,7 +8,7 @@
 <? get_header(); ?>
 
 <? $gallery = get_projects(); ?>
-<? clog($gallery); ?>
+<? // clog($gallery); ?>
 
 <div class="instructions tablet-hide mobile-hide">
 	<div class="keys"></div>
@@ -20,11 +20,11 @@
 
 	<div class="gallery-wrapper">
 
-		<div class="project clearfix about" data-proj-name="About" data-page-id="0">
+		<div class="row clearfix about" data-proj-name="About" data-page-id="0">
 
 			<? $details = $gallery["about"][0]; ?>
 
-			<? clog($details); ?>
+			<? // clog($details); ?>
 
 			<div class="slide text arrow-right">
 				<div class="slide-padding clearfix">
@@ -85,7 +85,7 @@
 			$fields = $project["fields"];
 			$images = $fields["images"];
 		?>
-		<div class="project clearfix" data-proj-name="<?= $project["meta"]->post_title; ?>" data-page-id="<?= $project["meta"]->ID; ?>" data-page-permalink="<?= get_permalink($project["meta"]->ID); ?>">
+		<div class="row clearfix" data-proj-name="<?= $project["meta"]->post_title; ?>" data-page-id="<?= $project["meta"]->ID; ?>" data-page-permalink="<?= get_permalink($project["meta"]->ID); ?>">
 			<div class="slide text arrow-right" <? /* if ( $project["fields"]["color"] ) { ?>style="background-color:<? echo $project["fields"]["color"]; ?>"<? } */ ?>>
 				<div class="slide-padding clearfix">
 					<div class="column col-12 section title">
