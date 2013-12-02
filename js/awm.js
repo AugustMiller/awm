@@ -25,7 +25,7 @@ function Matrix ( options ) {
 
 	self.init();
 
-	console.log(self);
+	// console.log(self);
 }
 
 Matrix.prototype.init = function ( ) {
@@ -191,7 +191,7 @@ Matrix.prototype.touchConclude = function ( e ) {
 			self.rows[self.current].pick( self.rows[self.current].prev() , Math.min( ( self.touch.x.delta.duration * 3 ) , self.rows[self.current].options.speed ) );
 		}
 	} else {
-		console.log(self.rows[self.current].options.speed);
+		// console.log(self.rows[self.current].options.speed);
 		self.rows[self.current].pick( self.rows[self.current].current , self.rows[self.current].options.speed );
 	}
 };
@@ -262,7 +262,7 @@ Matrix.prototype.pick = function ( id , velocity ) {
 	self.rows[self.current].nav.addClass('active');
 	self.rows[self.current].nav.siblings().removeClass('active');
 
-	console.log( [ "At" , self.current , self.rows[self.current].current ] );
+	// console.log( [ "At" , self.current , self.rows[self.current].current ] );
 };
 
 Matrix.prototype.seek = function( project , slide ) {
@@ -473,7 +473,7 @@ $(document).ready( function ( ) {
 	if ( $('#gallery').length ) {
 		Gallery = new Matrix ({
 			wrapper : ".gallery-wrapper",
-			rowClass : ".project",
+			rowClass : ".row",
 			slideClass : ".slide",
 			map : "#minimap"
 		});
